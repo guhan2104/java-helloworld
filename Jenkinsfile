@@ -31,6 +31,11 @@ pipeline {
                 dependencyCheck additionalArguments: '--format HTML', odcInstallation: 'Dp-check'
             }
         }
+	stage('JFROG ARTIFACTORY PUSH') {
+            steps {
+                sh 'curl -H X-JFrog-Art-Api:cmVmdGtuOjAxOjE3NTA0MzU1OTM6cEN5ZU9KbFMydVp6Wmx1MjdyYkZRZDVETlhU -T /var/lib/jenkins/workspace/javapp/target/helloworld-1.0-SNAPSHOT.war http://44.199.244.80:8082/artifactory/java-repo/$BUILD_NUMBER/helloworld-1.0-SNAPSHOT.war'
+            }
+        }
         stage('Building image') {
     steps{
          script {
