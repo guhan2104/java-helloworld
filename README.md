@@ -76,3 +76,5 @@ Troubleshooting
 If you encounter any issues, check the Docker container logs for more information:
 docker logs <container_id>
 
+Access the app 
+http://<ipaddress>:8080/helloworld-1.0-SNAPSHOT/
